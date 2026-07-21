@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0e5">
+  <meta name="description" content="Invitation au mariage de Pascal et Anne-Sophie — 8 octobre 2026">
+  <meta property="og:title" content="Pascal & Anne-Sophie — 08.10.2026">
+  <meta property="og:description" content="Nous vous invitons à célébrer notre mariage.">
+  <meta property="og:image" content="assets/accueil-fr.png">
+  <title>Pascal & Anne-Sophie — 08.10.2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar" aria-label="Navigation principale">
+      <div class="couple-name">Pascal <span>&amp;</span> Anne-Sophie</div>
+      <div class="language-switch" role="group" aria-label="Choisir la langue">
+        <button class="lang-btn active" data-lang="fr" type="button">FR</button>
+        <span aria-hidden="true">|</span>
+        <button class="lang-btn" data-lang="he" type="button">עברית</button>
+      </div>
+    </header>
+
+    <section class="viewer" aria-live="polite">
+      <div class="slide active home-slide" data-slide="0">
+        <div class="artwork-wrap">
+          <img data-fr="assets/accueil-fr.png" data-he="assets/accueil-he.png"
+               src="assets/accueil-fr.png" alt="Invitation de mariage — page d’accueil">
+
+          <div class="watercolor-light" aria-hidden="true"></div>
+          <div class="air-layer" aria-hidden="true">
+            <span class="drift petal p1"></span><span class="drift leaf l1"></span>
+            <span class="drift petal p2"></span><span class="drift leaf l2"></span>
+            <span class="drift petal p3"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" data-slide="1">
+        <div class="artwork-wrap calm-artwork">
+          <img data-fr="assets/programme-fr.png" data-he="assets/programme-he.png" src="assets/programme-fr.png" alt="Programme de la soirée">
+          <div class="air-layer subtle" aria-hidden="true"><span class="drift petal p2"></span><span class="drift leaf l1"></span></div>
+        </div>
+      </div>
+
+      <div class="slide access-slide" data-slide="2">
+        <div class="artwork-wrap calm-artwork">
+          <img data-fr="assets/faq-fr.png" data-he="assets/faq-he.png" src="assets/faq-fr.png" alt="Informations pratiques et questions fréquentes">
+          <div class="air-layer subtle" aria-hidden="true"><span class="drift petal p1"></span><span class="drift leaf l2"></span></div>
+          <div class="map-overlay" aria-label="Accès à la réception">
+            <a class="mini-map-button maps-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Binyamina+Winery"><span class="map-icon" aria-hidden="true">📍</span><span>Google Maps</span></a>
+            <a class="mini-map-button waze-button" target="_blank" rel="noopener" href="https://waze.com/ul?q=Binyamina%20Winery&navigate=yes"><span class="map-icon" aria-hidden="true">🚙</span><span>Waze</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" data-slide="3">
+        <div class="artwork-wrap calm-artwork">
+          <img data-fr="assets/inscription-fr.png" data-he="assets/inscription-he.png" src="assets/inscription-fr.png" alt="Petit mot avant le formulaire de réponse">
+        </div>
+      </div>
+
+      <div class="slide form-slide" data-slide="4">
+        <section class="rsvp-card">
+          <div id="form-heading">
+            <div class="heart-line" aria-hidden="true"><span>♥</span></div>
+            <div class="fr-text"><h1>Confirmer votre présence</h1><p class="form-intro">Ce formulaire prend moins d’une minute.</p></div>
+            <div class="he-text"><h1>אישור הגעה</h1><p class="form-intro">מילוי הטופס נמשך פחות מדקה.</p></div>
+          </div>
+
+          <form id="rsvp-form" novalidate>
+            <label><span class="fr-text">Nom complet *</span><span class="he-text">שם מלא *</span><input name="fullName" autocomplete="name" required></label>
+            <label><span class="fr-text">Téléphone *</span><span class="he-text">טלפון *</span><input name="phone" type="tel" autocomplete="tel" required></label>
+            <fieldset>
+              <legend><span class="fr-text">Serez-vous présent(e) ? *</span><span class="he-text">האם תגיעו? *</span></legend>
+              <div class="radio-row">
+                <label class="choice"><input type="radio" name="attendance" value="yes" required><span class="fr-text">Oui, avec plaisir</span><span class="he-text">כן, בשמחה</span></label>
+                <label class="choice"><input type="radio" name="attendance" value="no" required><span class="fr-text">Malheureusement non</span><span class="he-text">לצערנו לא</span></label>
+              </div>
+            </fieldset>
+            <div id="guest-fields" class="conditional hidden">
+              <label><span class="fr-text">Nombre total de personnes *</span><span class="he-text">מספר המשתתפים הכולל *</span>
+                <select name="guestCount"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select>
+              </label>
+              <label id="companions-field" class="hidden"><span class="fr-text">Nom des accompagnants *</span><span class="he-text">שמות המלווים *</span><textarea name="companions" rows="3"></textarea></label>
+            </div>
+            <label><span class="fr-text">Un petit message pour les mariés</span><span class="he-text">ברכה לזוג</span><textarea name="message" rows="4"></textarea></label>
+            <button class="submit-button" type="submit"><span class="fr-text">Envoyer ma réponse</span><span class="he-text">שליחת התשובה</span></button>
+            <p class="form-note fr-text">Version d’essai : la connexion à Google Sheets sera ajoutée à l’étape suivante.</p>
+            <p class="form-note he-text">גרסת ניסיון: החיבור ל-Google Sheets יתווסף בשלב הבא.</p>
+          </form>
+
+          <div id="success-panel" class="success-panel hidden" role="status">
+            <div class="success-light" aria-hidden="true"></div>
+            <div class="success-air" aria-hidden="true">
+              <span class="confetti s1"></span><span class="confetti s2"></span><span class="confetti s3"></span><span class="confetti s4"></span><span class="confetti s5"></span><span class="confetti s6"></span>
+            </div>
+            <div class="fr-text"><h2>Merci 🤍</h2><p>Nous avons bien reçu votre réponse.</p><p>Nous avons hâte de partager cette magnifique journée avec vous.</p></div>
+            <div class="he-text"><h2>תודה 🤍</h2><p>קיבלנו את תשובתכם.</p><p>אנחנו מחכים בקוצר רוח לחלוק איתכם את היום הנפלא הזה.</p></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Changer de page">
+      <button id="prev-btn" class="nav-button" type="button"><span aria-hidden="true">←</span><span class="fr-text">Précédent</span><span class="he-text">חזרה</span></button>
+      <div class="page-dots" aria-label="Pages">
+        <button class="dot active" data-go="0" aria-label="Page 1"></button><button class="dot" data-go="1" aria-label="Page 2"></button><button class="dot" data-go="2" aria-label="Page 3"></button><button class="dot" data-go="3" aria-label="Page 4"></button><button class="dot" data-go="4" aria-label="Page 5"></button>
+      </div>
+      <button id="next-btn" class="nav-button" type="button"><span class="fr-text">Suivant</span><span class="he-text">הבא</span><span aria-hidden="true">→</span></button>
+    </nav>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
