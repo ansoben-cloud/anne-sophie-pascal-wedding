@@ -12,7 +12,6 @@ const guestCount = form.elements.guestCount;
 const companions = form.elements.companions;
 const successPanel = document.getElementById('success-panel');
 const formHeading = document.getElementById('form-heading');
-const calendarBtn = document.getElementById('calendar-btn');
 
 let currentSlide = 0;
 let currentLang = 'fr';
@@ -145,8 +144,6 @@ form.addEventListener('submit', async event => {
     form.classList.add('hidden');
     formHeading.classList.add('hidden');
     successPanel.classList.remove('hidden');
-
-    calendarBtn.classList.toggle('hidden', !isAttending);
   } catch (error) {
     alert(
       currentLang === 'he'
@@ -157,39 +154,6 @@ form.addEventListener('submit', async event => {
     submitButton.disabled = false;
     submitButton.innerHTML = originalText;
   }
-});
-
-calendarBtn.addEventListener('click', () => {
-  const isHebrew = currentLang === 'he';
-
-  const location = isHebrew
-    ? 'יקב בנימינה, רחוב היקב 6, בנימינה'
-    : 'Binyamina Winery, Rehov Hayekev 6, Binyamina';
-
-  const description = isHebrew
-    ? 'כל המידע זמין בהזמנה.'
-    : 'Toutes les informations sont disponibles dans votre invitation.';
-
-  const invitationLink = window.location.href.split('#')[0];
-
-  const calendarUrl = new URL(
-    'https://calendar.google.com/calendar/render'
-  );
-
-  calendarUrl.searchParams.set('action', 'TEMPLATE');
-  calendarUrl.searchParams.set('text', 'Anne-Sophie & Pascal 💍');
-  calendarUrl.searchParams.set(
-    'dates',
-    '20261008T180000/20261009T020000'
-  );
-  calendarUrl.searchParams.set('ctz', 'Asia/Jerusalem');
-  calendarUrl.searchParams.set('location', location);
-  calendarUrl.searchParams.set(
-    'details',
-    `${description}\n\n${invitationLink}`
-  );
-
-  window.open(calendarUrl.toString(), '_blank', 'noopener');
 });
 
 showSlide(0);
