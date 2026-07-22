@@ -138,3 +138,6 @@ html[dir="rtl"] .map-overlay{
     font-size:clamp(.41rem,1.9vw,.56rem)!important;
   }
 }
+.submit-button.hidden {
+  display: none;
+}
