@@ -172,38 +172,24 @@ calendarBtn.addEventListener('click', () => {
 
   const invitationLink = window.location.href.split('#')[0];
 
-  const calendarContent = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Anne-Sophie et Pascal//Mariage//FR',
-    'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
-    'BEGIN:VEVENT',
-    'UID:anne-sophie-pascal-20261008@wedding',
-    'DTSTAMP:20260722T000000Z',
-    'DTSTART;TZID=Asia/Jerusalem:20261008T180000',
-    'DTEND;TZID=Asia/Jerusalem:20261009T020000',
-    'SUMMARY:Anne-Sophie & Pascal 💍',
-    `LOCATION:${location}`,
-    `DESCRIPTION:${description}\\n${invitationLink}`,
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].join('\r\n');
+  const calendarUrl = new URL(
+    'https://calendar.google.com/calendar/render'
+  );
 
-  const calendarFile = new Blob([calendarContent], {
-    type: 'text/calendar;charset=utf-8'
-  });
+  calendarUrl.searchParams.set('action', 'TEMPLATE');
+  calendarUrl.searchParams.set('text', 'Anne-Sophie & Pascal 💍');
+  calendarUrl.searchParams.set(
+    'dates',
+    '20261008T180000/20261009T020000'
+  );
+  calendarUrl.searchParams.set('ctz', 'Asia/Jerusalem');
+  calendarUrl.searchParams.set('location', location);
+  calendarUrl.searchParams.set(
+    'details',
+    `${description}\n\n${invitationLink}`
+  );
 
-  const downloadLink = document.createElement('a');
-
-  downloadLink.href = URL.createObjectURL(calendarFile);
-  downloadLink.download = 'Anne-Sophie-Pascal-08-10-2026.ics';
-
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-  downloadLink.remove();
-
-  URL.revokeObjectURL(downloadLink.href);
+  window.open(calendarUrl.toString(), '_blank', 'noopener');
 });
 
 showSlide(0);
