@@ -138,5 +138,9 @@ html[dir="rtl"] .map-overlay{
     font-size:clamp(.41rem,1.9vw,.56rem)!important;
   }
 }
-
+/* Couleur du message Merci uniquement en hébreu */
+html[dir="rtl"] .success-panel h2,
+html[dir="rtl"] .success-panel p {
+  color: #5b6e51;
+}
 
