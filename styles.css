@@ -138,8 +138,8 @@ html[dir="rtl"] .map-overlay{
     font-size:clamp(.41rem,1.9vw,.56rem)!important;
   }
 }
-html[dir="rtl"] .success-panel .he-text,
-html[dir="rtl"] .success-panel .he-text * {
+html[dir="rtl"] #success-panel .he-text h2,
+html[dir="rtl"] #success-panel .he-text p {
   color: #5b6e51 !important;
 }
 
