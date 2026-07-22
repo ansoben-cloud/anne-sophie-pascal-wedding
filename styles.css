@@ -141,20 +141,4 @@ html[dir="rtl"] .map-overlay{
 .submit-button.hidden {
   display: none;
 }
-#calendar-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
 
-#calendar-btn.hidden {
-  display: none;
-}
-
-.calendar-icon {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
