@@ -31,6 +31,18 @@ function showSlide(index) {
   prevBtn.disabled = currentSlide === 0;
   nextBtn.disabled = currentSlide === slides.length - 1;
   document.querySelector('.viewer').scrollTop = 0;
+  if (weddingVideo) {
+  const videoSlide = weddingVideo.closest('.slide');
+  const videoIsVisible = videoSlide.classList.contains('active');
+
+  if (videoIsVisible) {
+    weddingVideo.currentTime = 0;
+    weddingVideo.play().catch(() => {});
+  } else {
+    weddingVideo.pause();
+    weddingVideo.currentTime = 0;
+  }
+}
 }
 
 function setLanguage(lang) {
