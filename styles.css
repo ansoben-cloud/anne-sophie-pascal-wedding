@@ -148,3 +148,25 @@ html[dir="rtl"] #success-panel .he-text p {
   height: 100%;
   object-fit: contain;
 }
+.video-slide .artwork-wrap {
+  max-width: 100%;
+  max-height: calc(100dvh - 156px);
+}
+
+.video-slide video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 156px);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+@media(max-width:640px) {
+  .video-slide .artwork-wrap,
+  .video-slide video {
+    max-height: calc(100dvh - 144px);
+    border-radius: 4px;
+  }
+}
