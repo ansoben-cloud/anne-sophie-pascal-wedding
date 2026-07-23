@@ -59,6 +59,20 @@ function setLanguage(lang) {
   document.querySelectorAll('img[data-fr]').forEach(img => {
     img.src = img.dataset[lang];
   });
+  if (weddingVideo) {
+  weddingVideo.pause();
+  weddingVideo.src = weddingVideo.dataset[lang];
+  weddingVideo.poster =
+    lang === 'he'
+      ? 'assets/inscription-he.png'
+      : 'assets/inscription-fr.png';
+
+  weddingVideo.load();
+
+  if (weddingVideo.closest('.slide').classList.contains('active')) {
+    weddingVideo.play().catch(() => {});
+  }
+}
 }
 
 prevBtn.addEventListener('click', () => {
