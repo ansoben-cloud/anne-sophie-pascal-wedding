@@ -12,6 +12,7 @@ const guestCount = form.elements.guestCount;
 const companions = form.elements.companions;
 const successPanel = document.getElementById('success-panel');
 const formHeading = document.getElementById('form-heading');
+const weddingVideo = document.getElementById('wedding-video');
 
 let currentSlide = 0;
 let currentLang = 'fr';
